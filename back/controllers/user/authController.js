@@ -1,4 +1,4 @@
-import User from "../../models/userModule.js";
+import User from "../../models/userModel.js";
 import { generateToken } from "../../helpers/generateToken.js";
 import asyncHandler from "express-async-handler";
 
