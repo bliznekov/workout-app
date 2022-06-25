@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import colors from "colors";
 //Config
 import { connectDB } from "./config/db.js";
+//Middleware
+import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 // Routes
 import userRoutes from "./routes/userRoutes.js";
 
@@ -18,6 +20,9 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
