@@ -46,3 +46,21 @@ export const updateWorkout = asyncHandler(async (req, res) => {
 
     res.json(updateWorkout);
 });
+
+// @desc    Delete workout
+// @route   DELETE /api/workout
+// @access  Private
+export const deleteWorkout = asyncHandler(async (req, res) => {
+    const { workoutId } = req.body;
+
+    const exercise = await Workout.findById(workoutId);
+
+    if (!exercise) {
+        res.status(404);
+        throw new Error("Данная тренировка не найдена!");
+    }
+
+    await exercise.remove();
+
+    res.json({ massage: "Workout has been removed" });
+});

@@ -37,3 +37,21 @@ export const updateExercise = asyncHandler(async (req, res) => {
 
     res.json(updateExercise);
 });
+
+// @desc    Delete exercise
+// @route   DELETE /api/exercises
+// @access  Private
+export const deleteExercise = asyncHandler(async (req, res) => {
+    const { exerciseId } = req.body;
+
+    const exercise = await Exercise.findById(exerciseId);
+
+    if (!exercise) {
+        res.status(404);
+        throw new Error("Данное упражнение не найдено!");
+    }
+
+    await exercise.remove();
+
+    res.json({ massage: "Exercise has been removed" });
+});
