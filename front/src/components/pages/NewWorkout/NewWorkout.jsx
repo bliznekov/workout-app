@@ -4,8 +4,6 @@ import Layout from "../../common/Layout";
 import Button from "../../ui/Button/Button";
 import Field from "../../ui/Field/Field";
 
-import styles from "./NewWorkout.module.scss";
-
 import bgImage from "./../../../images/new-workout-bg.jpg";
 import { Link } from "react-router-dom";
 
@@ -18,7 +16,7 @@ const NewWorkout = () => {
     return (
         <>
             <Layout bgImage={bgImage} heading="Create new workout" />
-            <div className={styles.wrapper}>
+            <div className="wrapper-inner-page">
                 <form onSubmit={handleSubmit}>
                     <Field placeholder="Enter name" value={name} onChange={e => setName(e.target.value)} required />
                     <Link to="/new-exercise" className="dark-link">
