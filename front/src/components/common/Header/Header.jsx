@@ -1,15 +1,27 @@
 import React from "react";
+import Hamburger from "./Hamburger/Hamburger";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
 
 import userImage from "./../../../images/header/user.svg";
-import Hamburger from "./Hamburger/Hamburger";
+import arrowImage from "./../../../images/header/arrow.svg";
 
 const Header = () => {
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
+    debugger;
     return (
         <header className={styles.header}>
-            <button type="button">
-                <img src={userImage} alt="Auth" />
-            </button>
+            {pathname !== "/" ? (
+                <button type="button" onClick={() => navigate(-1)}>
+                    <img src={arrowImage} alt="Auth" />
+                </button>
+            ) : (
+                <button type="button">
+                    <img src={userImage} alt="Auth" />
+                </button>
+            )}
+
             <Hamburger />
         </header>
     );
