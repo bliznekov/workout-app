@@ -9,12 +9,11 @@ import arrowImage from "./../../../images/header/arrow.svg";
 const Header = () => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
-    debugger;
     return (
         <header className={styles.header}>
             {pathname !== "/" ? (
                 <button type="button" onClick={() => navigate(-1)}>
-                    <img src={arrowImage} alt="Auth" />
+                    <img src={arrowImage} alt="back" />
                 </button>
             ) : (
                 <button type="button">
