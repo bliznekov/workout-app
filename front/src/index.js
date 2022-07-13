@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import AppProvider from "./providers/AppProvider";
 import reportWebVitals from "./reportWebVitals";
-import Routes from "./Routes.jsx";
 
 import "./scss/index.scss";
 
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
-            <Routes />
+            <AppProvider />
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
     </React.StrictMode>

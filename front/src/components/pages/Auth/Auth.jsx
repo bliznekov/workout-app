@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 import { $api } from "../../../api/api";
+import { useAuth } from "../../../hooks/useAuth";
 import Layout from "../../common/Layout";
 
 import bgImage from "../../../images/auth-bg.png";
@@ -15,6 +17,9 @@ const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [type, setType] = useState("auth");
+
+    const navigate = useNavigate();
+    const { setIsAuth } = useAuth();
 
     const {
         mutate: register,
@@ -32,6 +37,12 @@ const Auth = () => {
         {
             onSuccess(data) {
                 localStorage.setItem("token", data.token);
+                setIsAuth("true");
+
+                setEmail("");
+                setPassword("");
+
+                navigate("/");
             },
         }
     );
