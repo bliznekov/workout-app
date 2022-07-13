@@ -12,8 +12,8 @@ const Hamburger = () => {
     const { ref, isComponentVisible, setIsComponentVisible } = useOutsideAlerter(false);
 
     const handleLogout = () => {
-        console.log("logout");
-        setIsAuth(true);
+        localStorage.removeItem("token");
+        setIsAuth(false);
         setIsComponentVisible(false);
     };
 
