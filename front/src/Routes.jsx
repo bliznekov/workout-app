@@ -12,8 +12,13 @@ const App = () => {
             <Routes>
                 {routes.map(route => {
                     {
-                        if (route.auth && !isAuth) {
-                            return false;
+                        {
+                            /* {
+                            debugger;
+                            if (route.auth && !isAuth) {
+                                return false;
+                            }
+                        } */
                         }
                     }
 

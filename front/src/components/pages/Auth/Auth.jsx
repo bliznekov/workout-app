@@ -23,7 +23,7 @@ const Auth = () => {
 
     const successLogin = token => {
         localStorage.setItem("token", token);
-        setIsAuth("true");
+        setIsAuth(true);
 
         setEmail("");
         setPassword("");
