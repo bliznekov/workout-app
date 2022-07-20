@@ -102,8 +102,14 @@ const Auth = () => {
                         type="password"
                     />
                     <div className={styles.wrapperButtons}>
-                        <Button text="Sign in" callback={() => setType("auth")} />
-                        <Button text="Sign up" callback={() => setType("reg")} />
+                        <Button
+                            text="Sign in"
+                            callback={() => setType("auth")}
+                        />
+                        <Button
+                            text="Sign up"
+                            callback={() => setType("reg")}
+                        />
                     </div>
                 </form>
             </div>
