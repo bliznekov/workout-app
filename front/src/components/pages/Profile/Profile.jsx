@@ -58,11 +58,11 @@ const Profile = () => {
                 <div className={styles.before_after}>
                     <div>
                         <div className={styles.heading}>Before</div>
-                        <img src={afterImage} alt="" />
+                        <img src={afterImage} alt="" draggable={false} />
                     </div>
                     <div>
                         <div className={styles.heading}>After</div>
-                        <img src={afterImage} alt="" />
+                        <img src={afterImage} alt="" draggable={false} />
                     </div>
                 </div>
             </div>

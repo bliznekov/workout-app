@@ -19,7 +19,9 @@ export const createNewWorkout = asyncHandler(async (req, res) => {
 // @route   GET /api/workouts/:id
 // @access  Private
 export const getWorkout = asyncHandler(async (req, res) => {
-    const workout = await Workout.findById(req.params.id).populate("exercises").lean();
+    const workout = await Workout.findById(req.params.id)
+        .populate("exercises")
+        .lean();
 
     const minutes = Math.ceil(workout.exercises.length * 3.7);
 

@@ -18,11 +18,21 @@ const Header = () => {
         <header className={styles.header}>
             {pathname !== "/" ? (
                 <button type="button" onClick={() => navigate(-1)}>
-                    <img src={arrowImage} alt="back" />
+                    <img src={arrowImage} alt="back" draggable={false} />
                 </button>
             ) : (
-                <button type="button" onClick={() => (isAuth ? navigate("/profile") : navigate("/auth"))}>
-                    <img src={isAuth ? authImage : userImage} alt="Auth" height="40" />
+                <button
+                    type="button"
+                    onClick={() =>
+                        isAuth ? navigate("/profile") : navigate("/auth")
+                    }
+                >
+                    <img
+                        src={isAuth ? authImage : userImage}
+                        alt="Auth"
+                        height="40"
+                        draggable={false}
+                    />
                 </button>
             )}
 
