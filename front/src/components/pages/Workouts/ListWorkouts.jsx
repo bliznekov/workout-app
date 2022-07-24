@@ -32,7 +32,7 @@ const ListWorkouts = () => {
         "Create new workout log",
         ({ workoutId }) =>
             $api({
-                url: "/workouts",
+                url: "/workouts/log",
                 type: "POST",
                 body: { workoutId },
             }),

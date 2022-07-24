@@ -6,14 +6,19 @@ import ExerciseLog from "../../../models/exerciseLogModel.js";
 // @route   GET /api/exercises/log/:id
 // @access  Private
 export const getExerciseLog = asyncHandler(async (req, res) => {
-    const exerciseLog = await ExerciseLog.findById(req.params.id).populate("exercise", "name imageId").lean();
+    const exerciseLog = await ExerciseLog.findById(req.params.id)
+        .populate("exercise", "name imageName")
+        .lean();
 
     if (!exerciseLog) {
         res.status(404);
         throw new Error("Лог не найден!");
     }
 
-    const prevExercises = await ExerciseLog.find({ user: req.user._id, exercise: exerciseLog._id }).sort("desc");
+    const prevExercises = await ExerciseLog.find({
+        user: req.user._id,
+        exercise: exerciseLog._id,
+    }).sort("desc");
 
     const prevExLog = prevExercises[0];
 
