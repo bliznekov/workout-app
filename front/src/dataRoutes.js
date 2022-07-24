@@ -45,7 +45,7 @@ export const routes = [
         auth: true,
     },
     {
-        path: "/workouts/:id",
+        path: "/workout/:id",
         exact: false,
         component: SingleWorkout,
         auth: true,

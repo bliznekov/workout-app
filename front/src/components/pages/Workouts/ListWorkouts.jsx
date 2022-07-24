@@ -22,7 +22,6 @@ const ListWorkouts = () => {
             refetchOnWindowFocus: false,
         }
     );
-
     const {
         mutate: createWorkoutLog,
         isLoading,
@@ -38,7 +37,7 @@ const ListWorkouts = () => {
             }),
         {
             onSuccess(data) {
-                navigate(`/workouts/${data._id}`);
+                navigate(`/workout/${data._id}`);
             },
         }
     );
