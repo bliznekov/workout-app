@@ -32,6 +32,7 @@ const Hamburger = () => {
                     }
                     alt="Auth"
                     height="24"
+                    width="27"
                     draggable={false}
                 />
             </button>
