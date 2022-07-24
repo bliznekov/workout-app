@@ -28,7 +28,7 @@
 			cursor: pointer;
 			width: 100%;
 
-			@media (max-width: 400px) {
+			@media (max-width: $mobile) {
 				font-size: 18px;
 			}
 		}
